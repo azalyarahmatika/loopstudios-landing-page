@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Loopstudios landing page</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    .link::after {
+      content: "";
+      position: absolute;
+      z-index: 100;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+
+    .link:hover::after {
+      width: 100%;
+    }
+    </style>
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          color: {
+            dark_gray: 'hsl(0, 0%, 55%)',
+            very_dark_gray: 'hsl(0, 0%, 41%)'
+          },
+          fontFamily: {
+            alata: 'Alata, sans-serif',
+            josefin: 'Josefin Sans, sans-serif',
+          }
+          
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="h-screen">
+    <img class="relative top-0 -z-10 h-full w-full object-cover" src="./images/mobile/image-hero.jpg" alt="">
+    <img class="relative hidden" src="./images/desktop/image-hero.jpg" alt="Hero">
+
+    <nav class="h-8 absolute justify-between inset-0 top-0 flex mt-6 mx-4 items-center z-10">
+      <img class="h-6" src="./images/logo.svg" alt="logo">
+      <img class="h-4 w-6 cursor-pointer" src="./images/icon-hamburger.svg" alt="burger_menu" id="burger_menu">
+      
+      <ul class="hidden">
+        <li>About</li>
+        <li>Careers</li>
+        <li>Events</li>
+        <li>Products</li>
+        <li>Support</li>
+      </ul>
+    </nav>
+
+    <nav class="hidden fixed top-0 z-20 h-full w-full bg-black pt-7 px-4" id="mobile_nav">
+      <div class="flex justify-between inset-0 items-center">
+        <img class="h-6" src="./images/logo.svg" alt="logo">
+        <img class="h-5 w-6 cursor-pointer" src="./images/icon-close.svg" alt="close_menu" id="close_menu">
+      </div>
+
+      <ul class="text-white font-josefin leading-10 text-xl mt-36">
+        <li class="link w-fit relative">ABOUT</li>
+        <li class="link w-fit relative">CAREERS</li>
+        <li class="link w-fit relative">EVENTS</li>
+        <li class="link w-fit relative">PRODUCTS</li>
+        <li class="link w-fit relative">SUPPORT</li>
+      </ul>
+    </nav>
+
+    <h1 class="mx-4 p-4 border-2 border-white text-white absolute transform -translate-y-1/2 top-1/2 font-josefin text-3xl">IMMERSIVE EXPERIENCES THAT DELIVER</h1>
+  </header>
+
+  <main>
+    <article class="py-16 px-4 flex flex-col gap-10">
+      <img src="./images/desktop/image-interactive.jpg" alt="The leader in interactive VR">
+      <div>
+        <h2 class="font-josefin text-2xl text-center mb-2">THE LEADER IN INTERACTIVE VR</h2>
+        <p class="font-alata text-sm font-extralight text-gray-600 text-center leading-6">Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our award-winning creations have transformed businesses through digital experiences that bind to their brand.</p>
+      </div>
+    </article>
+
+    <article>
+      <div class="mb-6">
+        <h2 class="font-josefin text-2xl text-center">OUR CREATIONS</h2>
+      </div>
+
+      <div class="md:flex md:justify-between md:items-center hidden">
+        <h2 class="font-josefin text-2xl">OUR CREATIONS</h2>
+        <button class="px-6 py-2 bg-white border-2 text-xs tracking-widest border-black hover:bg-black hover:text-white font-alata">SEE ALL</button>
+      </div>
+
+      <div class="flex flex-col gap-5 mb-7">
+        <div class="relative text-white font-josefin text-xl">
+          <img src="./images/mobile/image-deep-earth.jpg" alt="">
+          <p class="absolute top-[50%] left-4 leading-6">DEEP<br>EARTH</p>
+        </div>
+        <div class="relative text-white font-josefin text-xl">
+          <img src="./images/mobile/image-night-arcade.jpg" alt="">
+          <p class="absolute top-[50%] left-4 leading-6">NIGHT<br>ARCADE</p>
+        </div>
+        <div class="relative text-white font-josefin text-xl">
+          <img src="./images/mobile/image-soccer-team.jpg" alt="">
+          <p class="absolute top-[50%] left-4 leading-6">SOCCER<br>TEAM VR</p>
+        </div>
+        <div class="relative text-white font-josefin text-xl">
+          <img src="./images/mobile/image-grid.jpg" alt="">
+          <p class="absolute top-[50%] left-4 leading-6">THE<br>GRID</p>
+        </div>
+        <div class="relative text-white font-josefin text-xl">
+          <img src="./images/mobile/image-from-above.jpg" alt="">
+          <p class="absolute top-[50%] left-4 leading-6">FROM UP<br>ABOVE VR</p>
+        </div>
+        <div class="relative text-white font-josefin text-xl">
+          <img src="./images/mobile/image-pocket-borealis.jpg" alt="">
+          <p class="absolute top-[50%] left-4 leading-6">POCKET<br>BOREALIS</p>
+        </div>
+        <div class="relative text-white font-josefin text-xl">
+          <img src="./images/mobile/image-curiosity.jpg" alt="">
+          <p class="absolute top-[50%] left-4 leading-6">THE<br>CURIOSITY</p>
+        </div>
+        <div class="relative text-white font-josefin text-xl">
+          <img src="./images/mobile/image-fisheye.jpg" alt="">
+          <p class="absolute top-[50%] left-4 leading-6">MAKE IT<br>FISHEYE</p>
+        </div>
+      </div>
+
+      <button class="px-6 py-2 mb-16 block mx-auto bg-white border-2 text-xs tracking-widest border-black hover:bg-black hover:text-white font-alata">SEE ALL</button>
+    </article>
+  </main>
+
+  <footer class="bg-black flex flex-col items-center gap-6 py-8">
+    <img src="./images/logo.svg" alt="logo">
+    <ul class="text-white text-xs flex flex-col gap-6 items-center font-alata">
+      <li>About</li>
+      <li>Careers</li>
+      <li>Events</li>
+      <li>Products</li>
+      <li>Support</li>
+    </ul>
+    <ul class="flex gap-5 mt-7 font-alata text-xs">
+      <li><img class="h-5" src="./images/icon-facebook.svg" alt=""></li>
+      <li><img class="h-5" src="./images/icon-twitter.svg" alt=""></li>
+      <li><img class="h-5" src="./images/icon-pinterest.svg" alt=""></li>
+      <li><img class="h-5" src="./images/icon-instagram.svg" alt=""></li>
+    </ul>
+    <p class="text-gray-500 mb-5">© 2021 Loopstudios. All rights reserved.</p>
+    <div class="attribution text-white">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="http://azalyarahmatika.com" target="_blank">Azalya Rahmatika</a>.
+    </div>
+  </footer>
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  <script>
+    const burgerMenu = document.querySelector('#burger_menu');
+    const closeMenu = document.querySelector('#close_menu');
+    const mobileNav = document.querySelector('#mobile_nav');
+
+    burgerMenu.addEventListener('click', () => {
+      // closeMenu.classList.remove('hidden');/
+      mobileNav.classList.remove('hidden')
+    })
+
+    closeMenu.addEventListener('click', () => {
+      // closeMenu.classList.add('hidden');
+      mobileNav.classList.add('hidden')
+    })
+  </script>
+</body>
+</html>
