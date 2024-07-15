@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repository](https://github.com/azalyarahmatika/loopstudios-landing-page)
-- Live Site URL: [Github Pages](https://your-live-site-url.com)
+- Live Site URL: [Github Pages](https://azalyarahmatika.github.io/loopstudios-landing-page/)
 
 ## My process
 
