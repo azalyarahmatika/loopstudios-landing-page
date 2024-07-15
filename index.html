@@ -33,7 +33,11 @@
     .link:hover::after {
       width: 100%;
     }
-    </style>
+
+    .desktop::after {
+      bottom: -2px;
+      height: 2px;
+    }
   </style>
 
   <script>
@@ -56,19 +60,21 @@
 </head>
 <body>
   <header class="h-screen">
-    <img class="relative top-0 -z-10 h-full w-full object-cover" src="./images/mobile/image-hero.jpg" alt="">
-    <img class="relative hidden" src="./images/desktop/image-hero.jpg" alt="Hero">
+    <img class="relative top-0 -z-10 h-full w-full object-cover md:hidden" src="./images/mobile/image-hero.jpg" alt="Hero Image">
 
-    <nav class="h-8 absolute justify-between inset-0 top-0 flex mt-6 mx-4 items-center z-10">
-      <img class="h-6" src="./images/logo.svg" alt="logo">
-      <img class="h-4 w-6 cursor-pointer" src="./images/icon-hamburger.svg" alt="burger_menu" id="burger_menu">
+    <img class="relative top-0 -z-10 h-full w-full object-cover hidden md:block" src="./images/desktop/image-hero.jpg" alt="Hero">
+
+    <nav class="h-8 absolute justify-between inset-0 top-0 flex mt-6 mx-4 lg:mt-16 lg:mx-20 md:mt-8 md:mx-14 items-center z-10 sm:mx-8 sm:mt-6">
+      <img class="h-6 md:h-8 lg:h-10" src="./images/logo.svg" alt="logo">
       
-      <ul class="hidden">
-        <li>About</li>
-        <li>Careers</li>
-        <li>Events</li>
-        <li>Products</li>
-        <li>Support</li>
+      <img class="h-4 w-6 cursor-pointer sm:hidden" src="./images/icon-hamburger.svg" alt="burger_menu" id="burger_menu">
+      
+      <ul class="hidden sm:flex text-white font-alata gap-5 lg:gap-8 text-sm lg:text-base">
+        <li class="link desktop w-fit relative cursor-pointer">About</li>
+        <li class="link desktop w-fit relative cursor-pointer">Careers</li>
+        <li class="link desktop w-fit relative cursor-pointer">Events</li>
+        <li class="link desktop w-fit relative cursor-pointer">Products</li>
+        <li class="link desktop w-fit relative cursor-pointer">Support</li>
       </ul>
     </nav>
 
@@ -87,98 +93,107 @@
       </ul>
     </nav>
 
-    <h1 class="mx-4 p-4 border-2 border-white text-white absolute transform -translate-y-1/2 top-1/2 font-josefin text-3xl">IMMERSIVE EXPERIENCES THAT DELIVER</h1>
+    <h1 class="mx-4 p-4 border-2 border-white text-white absolute transform -translate-y-1/2 top-1/2 font-josefin text-3xl md:text-5xl lg:mx-20 sm:w-1/2 lg:text-7xl lg:mt-8 sm:mx-8 md:mx-14">IMMERSIVE EXPERIENCES THAT DELIVER</h1>
   </header>
 
   <main>
-    <article class="py-16 px-4 flex flex-col gap-10">
-      <img src="./images/desktop/image-interactive.jpg" alt="The leader in interactive VR">
-      <div>
-        <h2 class="font-josefin text-2xl text-center mb-2">THE LEADER IN INTERACTIVE VR</h2>
-        <p class="font-alata text-sm font-extralight text-gray-600 text-center leading-6">Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our award-winning creations have transformed businesses through digital experiences that bind to their brand.</p>
+    <article class="py-20 mx-4 sm:mx-8 lg:flex-row lg:relative lg:pb-0 lg:mb-28 lg:mt-14 lg:mx-20 md:mx-14">
+      <img class="lg:hidden w-full" src="./images/mobile/image-interactive.jpg" alt="The leader in interactive VR">
+
+      <img class="hidden lg:block lg:w-2/3" src="./images/desktop/image-interactive.jpg" alt="The leader in interactive VR">
+
+      <div class="lg:absolute lg:bg-white lg:w-[460px] lg:bottom-0 lg:pl-16 pt-16 lg:pr-0 lg:right-0">
+        <h2 class="font-josefin text-2xl text-center mb-2 lg:text-left lg:text-5xl">THE LEADER IN INTERACTIVE VR</h2>
+        <p class="font-alata text-sm font-extralight text-gray-600 text-center lg:text-left leading-6">Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our award-winning creations have transformed businesses through digital experiences that bind to their brand.</p>
       </div>
     </article>
 
-    <article>
-      <div class="mb-6">
+    <article class="md:mx-14 lg:mx-20">
+      <div class="mb-8 md:hidden">
         <h2 class="font-josefin text-2xl text-center">OUR CREATIONS</h2>
       </div>
-
-      <div class="md:flex md:justify-between md:items-center hidden">
-        <h2 class="font-josefin text-2xl">OUR CREATIONS</h2>
+   
+      <div class="md:flex md:justify-between md:items-center hidden lg:mt-40 lg:mb-20 md:mb-10">
+        <h2 class="font-josefin text-2xl lg:text-5xl">OUR CREATIONS</h2>
         <button class="px-6 py-2 bg-white border-2 text-xs tracking-widest border-black hover:bg-black hover:text-white font-alata">SEE ALL</button>
       </div>
-
-      <div class="flex flex-col gap-5 mb-7">
-        <div class="relative text-white font-josefin text-xl">
-          <img src="./images/mobile/image-deep-earth.jpg" alt="">
-          <p class="absolute top-[50%] left-4 leading-6">DEEP<br>EARTH</p>
+      
+      <div class="md:grid md:grid-cols-3 md:grid-rows-3 lg:grid-rows-2 lg:grid-cols-4 lg:gap-10 lg:mb-20 md:gap-2 w-full h-full">
+        <div class="mb-5 relative text-white font-josefin text-xl md:grow">
+          <img src="./images/mobile/image-deep-earth.jpg" alt="DEEP EARTH" class="md:hidden w-full">
+          <img src="./images/desktop/image-deep-earth.jpg" alt="DEEP EARTH" class="hidden md:block w-full">
+          <p class="absolute top-[50%] left-4 leading-6 md:top-[80%] md:text-2xl">DEEP<br>EARTH</p>
         </div>
-        <div class="relative text-white font-josefin text-xl">
-          <img src="./images/mobile/image-night-arcade.jpg" alt="">
-          <p class="absolute top-[50%] left-4 leading-6">NIGHT<br>ARCADE</p>
+        <div class="mb-5 relative text-white font-josefin text-xl md:grow">
+          <img src="./images/mobile/image-night-arcade.jpg" alt="NIGHT ARCADE" class="md:hidden w-full">
+          <img src="./images/desktop/image-night-arcade.jpg" alt="NIGHT ARCADE" class="hidden md:block w-full">
+          <p class="absolute top-[50%] left-4 leading-6 md:top-[80%] md:text-2xl">NIGHT<br>ARCADE</p>
         </div>
-        <div class="relative text-white font-josefin text-xl">
-          <img src="./images/mobile/image-soccer-team.jpg" alt="">
-          <p class="absolute top-[50%] left-4 leading-6">SOCCER<br>TEAM VR</p>
+        <div class="mb-5 relative text-white font-josefin text-xl md:grow">
+          <img src="./images/mobile/image-soccer-team.jpg" alt="SOCCER TEAM VR" class="md:hidden w-full">
+          <img src="./images/desktop/image-soccer-team.jpg" alt="SOCCER TEAM VR" class="hidden md:block w-full">
+          <p class="absolute top-[50%] left-4 leading-6 md:top-[80%] md:text-2xl">SOCCER<br>TEAM VR</p>
         </div>
-        <div class="relative text-white font-josefin text-xl">
-          <img src="./images/mobile/image-grid.jpg" alt="">
-          <p class="absolute top-[50%] left-4 leading-6">THE<br>GRID</p>
+        <div class="mb-5 relative text-white font-josefin text-xl md:grow">
+          <img src="./images/mobile/image-grid.jpg" alt="THE GRID" class="md:hidden w-full">
+          <img src="./images/desktop/image-grid.jpg" alt="THE GRID" class="hidden md:block w-full">
+          <p class="absolute top-[50%] left-4 leading-6 md:top-[80%] md:text-2xl">THE<br>GRID</p>
         </div>
-        <div class="relative text-white font-josefin text-xl">
-          <img src="./images/mobile/image-from-above.jpg" alt="">
-          <p class="absolute top-[50%] left-4 leading-6">FROM UP<br>ABOVE VR</p>
+        <div class="mb-5 relative text-white font-josefin text-xl md:grow">
+          <img src="./images/mobile/image-from-above.jpg" alt="FROM UP ABOVE VR" class="md:hidden w-full">
+          <img src="./images/desktop/image-from-above.jpg" alt="FROM UP ABOVE VR"class="hidden md:block w-full">
+          <p class="absolute top-[50%] left-4 leading-6 md:top-[80%] md:text-2xl">FROM UP<br>ABOVE VR</p>
         </div>
-        <div class="relative text-white font-josefin text-xl">
-          <img src="./images/mobile/image-pocket-borealis.jpg" alt="">
-          <p class="absolute top-[50%] left-4 leading-6">POCKET<br>BOREALIS</p>
+        <div class="mb-5 relative text-white font-josefin text-xl md:grow">
+          <img src="./images/mobile/image-pocket-borealis.jpg" alt="POCKET BOREALIS" class="md:hidden w-full">
+          <img src="./images/desktop/image-pocket-borealis.jpg" alt="POCKET BOREALIS" class="hidden md:block w-full">
+          <p class="absolute top-[50%] left-4 leading-6 md:top-[80%] md:text-2xl">POCKET<br>BOREALIS</p>
         </div>
-        <div class="relative text-white font-josefin text-xl">
-          <img src="./images/mobile/image-curiosity.jpg" alt="">
-          <p class="absolute top-[50%] left-4 leading-6">THE<br>CURIOSITY</p>
+        <div class="mb-5 relative text-white font-josefin text-xl md:grow">
+          <img src="./images/mobile/image-curiosity.jpg" alt="THE CURIOSITY" class="md:hidden w-full">
+          <img src="./images/desktop/image-curiosity.jpg" alt="THE CURIOSITY" class="hidden md:block w-full">
+          <p class="absolute top-[50%] left-4 leading-6 md:top-[80%] md:text-2xl">THE<br>CURIOSITY</p>
         </div>
-        <div class="relative text-white font-josefin text-xl">
-          <img src="./images/mobile/image-fisheye.jpg" alt="">
-          <p class="absolute top-[50%] left-4 leading-6">MAKE IT<br>FISHEYE</p>
+        <div class="mb-7 relative text-white font-josefin text-xl md:grow">
+          <img src="./images/mobile/image-fisheye.jpg" alt="MAKE IT FISHEYE" class="md:hidden w-full">
+          <img src="./images/desktop/image-fisheye.jpg" alt="MAKE IT FISHEYE" class="hidden md:block w-full">
+          <p class="absolute top-[50%] left-4 leading-6 md:top-[80%] md:text-2xl">MAKE IT<br>FISHEYE</p>
         </div>
       </div>
 
-      <button class="px-6 py-2 mb-16 block mx-auto bg-white border-2 text-xs tracking-widest border-black hover:bg-black hover:text-white font-alata">SEE ALL</button>
+      <button class="md:hidden px-6 py-2 mb-20 block mx-auto bg-white border-2 text-xs tracking-widest border-black hover:bg-black hover:text-white font-alata">SEE ALL</button>
     </article>
   </main>
 
-  <footer class="bg-black flex flex-col items-center gap-6 py-8">
-    <img src="./images/logo.svg" alt="logo">
-    <ul class="text-white text-xs flex flex-col gap-6 items-center font-alata">
-      <li>About</li>
-      <li>Careers</li>
-      <li>Events</li>
-      <li>Products</li>
-      <li>Support</li>
-    </ul>
-    <ul class="flex gap-5 mt-7 font-alata text-xs">
-      <li><img class="h-5" src="./images/icon-facebook.svg" alt=""></li>
-      <li><img class="h-5" src="./images/icon-twitter.svg" alt=""></li>
-      <li><img class="h-5" src="./images/icon-pinterest.svg" alt=""></li>
-      <li><img class="h-5" src="./images/icon-instagram.svg" alt=""></li>
-    </ul>
-    <p class="text-gray-500 mb-5">© 2021 Loopstudios. All rights reserved.</p>
-    <div class="attribution text-white">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="http://azalyarahmatika.com" target="_blank">Azalya Rahmatika</a>.
+  <footer class="bg-black flex flex-col items-center gap-6 py-8 md:flex-row justify-between md:px-14 lg:px-20 font-alata md:mt-10">
+    <div>
+      <img src="./images/logo.svg" alt="logo" class="mb-6">
+      <ul class="text-white text-xs flex flex-col gap-6 items-center md:flex-row">
+        <li>About</li>
+        <li>Careers</li>
+        <li>Events</li>
+        <li>Products</li>
+        <li>Support</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="flex justify-center gap-5 mt-7 font-alata text-xs mb-6">
+        <li><img class="h-5" src="./images/icon-facebook.svg" alt=""></li>
+        <li><img class="h-5" src="./images/icon-twitter.svg" alt=""></li>
+        <li><img class="h-5" src="./images/icon-pinterest.svg" alt=""></li>
+        <li><img class="h-5" src="./images/icon-instagram.svg" alt=""></li>
+      </ul>
+      <p class="text-gray-500 mb-5 text-xs">© 2021 Loopstudios. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <footer>
+    <div class="text-black bg-white text-center py-1 font-alata text-xs">
+      Challenge by <a class="font-bold" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a class="font-bold" href="http://azalyarahmatika.com" target="_blank">Azalya Rahmatika</a>.
     </div>
   </footer>
   
-  
-  
-  
-  
-
-  
-
-  
-
   <script>
     const burgerMenu = document.querySelector('#burger_menu');
     const closeMenu = document.querySelector('#close_menu');
